@@ -2,16 +2,125 @@
 	box-sizing: border-box;	
 }
 
+html{
+	font-size: 62.5%;
+}
+
 body{
-	min-height: 100%;
 	margin: 0;
 	padding: 0;
 	font-family: Arial, Helvetica, sans-serif;
-	line-height: 1.4;
-	font-size: 62.5%;
+	line-height: 1;
+}
+
+header, footer, menu, nav, section{
+	display: block;
 }
 
 a{
 	color: #333;
 	text-decoration: none;
 }
+
+ol,ul{
+  list-style: none;
+}
+
+.container {
+	max-width: 1000px;
+	width: 95%;
+	margin: 0 auto;
+	font-size: 2rem;
+}
+
+.header {
+	font-size: 3rem;
+	border-bottom: 3px solid #232c23;
+	display: flex;
+	justify-content: space-between;
+  }
+  .header .logo {
+	width: 200px;
+	border: 1px solid red;
+  }
+  .header nav .nav-item {
+	display: flex;
+  }
+  @media only screen and (min-width: 733px) and (max-width: 959px), only screen and (min-width: 320px) and (max-width: 732px) {
+	.header nav .nav-item {
+	  display: none;
+	}
+  }
+
+  .header nav .hamburger {
+	display: none;
+  }
+  @media only screen and (min-width: 733px) and (max-width: 959px), only screen and (min-width: 320px) and (max-width: 732px) {
+	.header nav .hamburger {
+	  display: flex;
+	  flex-direction: column;
+	  justify-content: flex-end;
+	  margin: 11px;
+	}
+  }
+
+  .header button {
+	background: #dbe5f5;
+	border-radius: 4px;
+	padding: 7px 20px;
+	margin-bottom: 10px;
+  }
+  .header button:focus {
+	outline: none;
+  }
+  .header button div {
+	width: 35px;
+	height: 5px;
+	background-color: #36305f;
+	margin: 6px 0;
+  }
+  .dropdown {
+	z-index: 2;
+	cursor: pointer;
+  }
+  .dropdown .dropdown-content {
+	top: 4rem;
+	width: 95%;
+	position: absolute;
+	background-color: #dbe5f5;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  }
+  @media only screen and (min-width: 960px) and (max-width: 1199px), only screen and (min-width: 1200px) {
+	.dropdown .dropdown-content {
+	  display: none;
+	}
+  }
+  .dropdown .dropdown-content a {
+	margin: 0 auto;
+  }
+  .dropdown .dropdown-content a:hover {
+	color: white;
+  }
+  .dropdown .dropdown-hidden {
+	display: none;
+  }
+  .dropdown .dropdown-link {
+	width: 100%;
+	text-align: center;
+	padding: 15px 0;
+	text-decoration: none;
+	color: #232c23;
+  }
+  .dropdown .dropdown-link:hover {
+	color: white;
+	background-color: #232c23;
+  }
+  footer {
+	width: 100%;
+	font-size: 2rem;
+	text-align: center;
+	padding: 20px;
+	border-top: 3px solid #232c23;
+  }
