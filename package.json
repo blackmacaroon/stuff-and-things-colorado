@@ -1,0 +1,19 @@
+{
+  "name": "stuff-and-things-colorado",
+  "version": "1.0.0",
+  "description": "local colorado businesses",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackmacaroon/stuff-and-things-colorado.git"
+  },
+  "author": "kaylacrow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blackmacaroon/stuff-and-things-colorado/issues"
+  },
+  "homepage": "https://github.com/blackmacaroon/stuff-and-things-colorado#readme"
+}
