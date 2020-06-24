@@ -1,3 +1,4 @@
+ /*                                                       core styles */
 *, *:before, *:after{
 	box-sizing: border-box;	
 }
@@ -25,6 +26,7 @@ a{
 ol,ul{
   list-style: none;
 }
+ /*                                                      custom styles */
 
 .container {
 	max-width: 1000px;
@@ -33,6 +35,7 @@ ol,ul{
 	font-size: 2rem;
 }
 
+ /*                                                      nav styles    */
 .header {
 	font-size: 3rem;
 	border-bottom: 3px solid #232c23;
@@ -117,6 +120,9 @@ ol,ul{
 	color: white;
 	background-color: #232c23;
   }
+ /*                                                 search bar styles */
+  /*                                                      body styles */
+  /*                                                    footer styles */ 
   footer {
 	width: 100%;
 	font-size: 2rem;
