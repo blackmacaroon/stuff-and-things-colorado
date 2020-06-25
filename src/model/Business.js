@@ -1,4 +1,5 @@
 function Business(attributes){
+    this.id = attributes.id,
     this.name = attributes.name,
     this.location = attributes.location,
     this.webaddress = attributes.webaddress,
@@ -47,10 +48,27 @@ Business.saveAll = function() {
 };
 
 //      CREATE AND STORE A NEW BUSINESS INSTANCE
+Business.add = function(newBusi) {
+    var business = new Business[newBusi];
+    Business.instances[newBusi.id] = business;
+    console.log(newBusi.name + " created");
+}
 
 //      UPDATE AN EXISTING BUSINESS INSTANCE
+Business.update = function(updatedBusi) {
+    var business = Business.instances[updatedBusi.id];
+     
+}
 
 //      DELETE A BUSINESS INSTANCE
+Business.destroy = function(id) {
+    if(Business.instances[id]){
+        delete Business.instance[id]
+        console.log("Business " + id + " deleted" )
+    } else {
+        console.log("There is no business with ID " + id + " in the database")
+    }
+}
 
 //      CREATE A FEW EXAMPLE INSTANCES TO USE AS TEST DATA
 
