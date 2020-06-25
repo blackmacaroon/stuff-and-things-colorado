@@ -1,0 +1,1 @@
+var stuffandthings = { model: {}, view: {}, ctrl: {} }

@@ -5,7 +5,7 @@ function Business(attributes){
     this.webaddress = attributes.webaddress,
     this.hoursofop = attributes.hoursofop,
     this.contact = attributes.contact,
-    this.imageurl = attributes.imageurl,
+    this.image = attributes.image,
     this.description = attributes.description
 };
 
@@ -78,7 +78,7 @@ Business.createTestData = function() {
 
 //      DELETE ALL DATA FROM LOCAL STORAGE (!!! ONLY USE FOR TESTING !!!)
 Business.clearData = function() {
-    if(confirm("Are you sure you want to delete all the businesses?")) {
+    if(confirm("Are you sure you want to delete all the businesses in the database?")) {
         localStorage["bookTable"] = "{}";
     }
 };
