@@ -5,7 +5,6 @@ class Navbar {
           this.button = this.element.querySelector('.hamburger');
           // console.log("button", this.button);
           this.content = this.element.querySelector('.dropdown-content');
-          // Add a click handler to the button reference and call the toggleContent method.
           // console.log("content", this.content);
           this.button.addEventListener('click', () => this.dropdown());
           
