@@ -9,7 +9,7 @@ function Business(attributes){
     this.description = attributes.description
 };
 
-Business.convertRow2Obj = function (businessRow){ 
+Business.convertRow2Obj = function(businessRow) { 
     var business = new Business (businessRow);
     return business;
 };
@@ -52,13 +52,13 @@ Business.add = function(newBusi) {
     var business = new Business[newBusi];
     Business.instances[newBusi.id] = business;
     console.log(newBusi.name + " created");
-}
+};
 
 //      UPDATE AN EXISTING BUSINESS INSTANCE
 Business.update = function(updatedBusi) {
     var business = Business.instances[updatedBusi.id];
      
-}
+};
 
 //      DELETE A BUSINESS INSTANCE
 Business.destroy = function(id) {
@@ -68,18 +68,19 @@ Business.destroy = function(id) {
     } else {
         console.log("There is no business with ID " + id + " in the database")
     }
-}
+};
 
 //      CREATE A FEW EXAMPLE INSTANCES TO USE AS TEST DATA
+Business.createTestData = function() {
+    Book.instances["012345"] = new Business({id: "012345", name: "The Black Pineapple", webaddress: "http://www.theblackpineappleco.com/", contact: "theblackpineapplecandles@gmail.com", description: "Small Batch Hand Poured Natural Soy Wax Candles"});
+    Book.instances["012346"] = new Business({id: "012346", name: "Neckjuice", location: "6719 W. Colfax Ave, Lakewood, Colorado 80214", webaddress: "https://www.neckjuicedrips.com/", contact: "josiahgee@neckjuicedrips.com", description: 'Small Batch Hand Poured Natural Soy Wax Candles'});
+};
 
+//      DELETE ALL DATA FROM LOCAL STORAGE (!!! ONLY USE FOR TESTING !!!)
+Business.clearData = function() {
+    if(confirm("Are you sure you want to delete all the businesses?")) {
+        localStorage["bookTable"] = "{}";
+    }
+};
 
-
-
-
-const blackpineapple = new Business({
-    name: 'The Black Pineapple',
-    webaddress: 'http://www.theblackpineappleco.com/',
-    contact: 'theblackpineapplecandles@gmail.com',
-    description: 'Small Batch Hand Poured Natural Soy Wax Candles'
-});
 
