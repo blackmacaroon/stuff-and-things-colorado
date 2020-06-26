@@ -70,8 +70,8 @@ Business.destroy = function(id) {
 
 //      CREATE A FEW EXAMPLE INSTANCES TO USE AS TEST DATA
 Business.createTestData = function() {
-    Business.instances["012345"] = new Business({id: "012345", name: "The Black Pineapple", webaddress: "http://www.theblackpineappleco.com/"});
-    Business.instances["012346"] = new Business({id: "012346", name: "Neckjuice", webaddress: "https://www.neckjuicedrips.com/"});
+    Business.instances['012345'] = new Business({id: "012345", name: "The Black Pineapple", webaddress: "http://www.theblackpineappleco.com/"});
+    Business.instances['012346'] = new Business({id: "012346", name: "Neckjuice", webaddress: "https://www.neckjuicedrips.com/"});
     Business.saveAll();
     console.log("test data created")
 };

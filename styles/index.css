@@ -31,7 +31,7 @@ ol,ul{
 
 .container {
 	max-width: 1000px;
-	width: 95%;
+	width: 95%; 
 	margin: 0 auto;
 	font-size: 2rem;
 }
@@ -123,6 +123,10 @@ ol,ul{
   }
  /*                                                 search bar styles */
   /*                                                     other styles */
+  .main-content {
+
+	min-height: 500px;
+  }
   /*                                                    footer styles */ 
   footer {
 	width: 100%;
