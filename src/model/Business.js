@@ -13,17 +13,17 @@ Business.convertRow2Obj = function(businessRow) {
 
 //      LOAD ALL BUSINESSES INSTANCES                                                       
 Business.loadAll = function() {
-    var i = 0, key = "", keys=[], businessesString="", businesses = {};
+    var i = 0, key = "", keys=[], businessString="", businesses = {};
     try {
-        if(localStorage.getItem["businesses"]){
-            businessesString = localStorage.getItem["businesses"];
+        if(localStorage.getItem("businesses")){
+            businessString = localStorage.getItem("businesses");
         }
     } catch(err) {
         alert("Error reading from Local Storage\n" + err);
     }
-    if(businessesString){
-        businesses = JSON.parse(businessesString);      // "deserialization" = converting the string into a map
-        keys = Object.keys (businesses);
+    if(businessString){
+        businesses = JSON.parse(businessString);      // "deserialization" = converting the string into a map
+        keys = Object.keys(businesses);
         console.log( keys.length + " businesses loaded");
         for(i = 0; i<keys.length; i++){
             key= keys[i];
@@ -34,10 +34,10 @@ Business.loadAll = function() {
 
 //      SAVE ALL BUSINESS INSTANCES
 Business.saveAll = function() {
-    var businessesString = "", error=false, numOfBusinesses = Object.keys( Business.instances).length;
+    var businessString = "", error=false, numOfBusinesses = Object.keys( Business.instances).length;
     try {
-        businessesString = JSON.stringify( Business.instances);      // "serialization" = converting the map into a string
-        localStorage.setItem["businesses"] = businessesString;
+        businessString = JSON.stringify( Business.instances);      // "serialization" = converting the map into a string
+        localStorage.setItem("businesses", businessString);
     } catch(err){
         alert("Error writing to local storage\n" + err);
         error = true;
@@ -82,7 +82,7 @@ Business.createTestData = function() {
 //      DELETE ALL DATA FROM LOCAL STORAGE (!!! ONLY USE FOR TESTING !!!)
 Business.clearData = function() {
     if(confirm("Are you sure you want to delete all the businesses in the database?")) {
-        localStorage["businesses"] = "{}";
+        localStorage["business"] = "{}";
     }
 };
 
