@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minimal JS front-end App Example</title>    
+  <script src="src/ctrl/initialize.js"></script>
+  <script src="src/model/Business.js"></script>
+  <script src="src/view/createBusiness.js"></script>
+  <script>
+   window.addEventListener("load", stuffandthings.view.createBusiness.setupUserInterface);
+  </script>
+</head>
+<body>
+  <h1>Stuff and Things: Add a new local business</h1>
+  <form id="Book">
+    <p><label>ID: <input name="is" /></label></p>
+    <p><label>name: <input name="name" /></label></p>
+    <p><label>webaddress: <input name="webaddress" /></label></p>
+    <p><button type="button" name="commit">Save</button></p>
+  </form>
+  <nav><a href="index.html">Back</a></nav>
+</body>
+</html>
