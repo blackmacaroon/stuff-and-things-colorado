@@ -1,12 +1,7 @@
 function Business(attributes){
     this.id = attributes.id,
     this.name = attributes.name,
-    this.location = attributes.location,
-    this.webaddress = attributes.webaddress,
-    this.hoursofop = attributes.hoursofop,
-    this.contact = attributes.contact,
-    this.image = attributes.image,
-    this.description = attributes.description
+    this.webaddress = attributes.webaddress
 };
 
 Business.convertRow2Obj = function(businessRow) { 
@@ -57,6 +52,9 @@ Business.add = function(newBusi) {
 //      UPDATE AN EXISTING BUSINESS INSTANCE
 Business.update = function(updatedBusi) {
     var business = Business.instances[updatedBusi.id];
+    if(business.name !== updatedBusi.name) {business.name = updatedBusi.name};
+    if(business.webaddress !== updatedBusi.webaddress) {business.webaddress = updatedBusi.webaddress};
+    console.log("Business "+ updatedBusi.id + " modified successfully");
      
 };
 
@@ -72,14 +70,16 @@ Business.destroy = function(id) {
 
 //      CREATE A FEW EXAMPLE INSTANCES TO USE AS TEST DATA
 Business.createTestData = function() {
-    Book.instances["012345"] = new Business({id: "012345", name: "The Black Pineapple", webaddress: "http://www.theblackpineappleco.com/", contact: "theblackpineapplecandles@gmail.com", description: "Small Batch Hand Poured Natural Soy Wax Candles"});
-    Book.instances["012346"] = new Business({id: "012346", name: "Neckjuice", location: "6719 W. Colfax Ave, Lakewood, Colorado 80214", webaddress: "https://www.neckjuicedrips.com/", contact: "josiahgee@neckjuicedrips.com", description: 'Small Batch Hand Poured Natural Soy Wax Candles'});
+    Business.instances["012345"] = new Business({id: "012345", name: "The Black Pineapple", webaddress: "http://www.theblackpineappleco.com/"});
+    Business.instances["012346"] = new Business({id: "012346", name: "Neckjuice", webaddress: "https://www.neckjuicedrips.com/"});
+    Business.saveAll();
+    console.log("test data created")
 };
 
 //      DELETE ALL DATA FROM LOCAL STORAGE (!!! ONLY USE FOR TESTING !!!)
 Business.clearData = function() {
     if(confirm("Are you sure you want to delete all the businesses in the database?")) {
-        localStorage["bookTable"] = "{}";
+        localStorage["businessTable"] = "{}";
     }
 };
 

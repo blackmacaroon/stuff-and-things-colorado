@@ -15,7 +15,6 @@ stuffandthings.view.listBusinesses = {
             row.insertCell(-1).textContent = Business.instances[key].webaddress;
             row.insertCell(-1).textContent = Business.instances[key].hoursofop;
             row.insertCell(-1).textContent = Business.instances[key].contact;
-            row.insertCell(-1).textContent = Business.instances[key].image;
             row.insertCell(-1).textContent = Business.instances[key].description;
         }
     }
