@@ -11,11 +11,7 @@ stuffandthings.view.listBusinesses = {
             row = tableBodyEl.insertRow();
             row.insertCell(-1).textContent = Business.instances[key].id;      
             row.insertCell(-1).textContent = Business.instances[key].name;  
-            row.insertCell(-1).textContent = Business.instances[key].location;
             row.insertCell(-1).textContent = Business.instances[key].webaddress;
-            row.insertCell(-1).textContent = Business.instances[key].hoursofop;
-            row.insertCell(-1).textContent = Business.instances[key].contact;
-            row.insertCell(-1).textContent = Business.instances[key].description;
         }
     }
 }

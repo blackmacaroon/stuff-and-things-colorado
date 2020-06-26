@@ -4,6 +4,8 @@ function Business(attributes){
     this.webaddress = attributes.webaddress
 };
 
+Business.instances = {};
+
 Business.convertRow2Obj = function(businessRow) { 
     var business = new Business (businessRow);
     return business;
@@ -11,35 +13,36 @@ Business.convertRow2Obj = function(businessRow) {
 
 //      LOAD ALL BUSINESSES INSTANCES                                                       
 Business.loadAll = function() {
-    var i = 0, key = "", keys=[], businessTableString="", businessTable = {};
+    var i = 0, key = "", keys=[], businessesString="", businesses = {};
     try {
-        if(localStorage["businessTable"]){
-            businessTableString = localStorage["businessTable"];
+        if(localStorage.getItem["businesses"]){
+            businessesString = localStorage.getItem["businesses"];
         }
     } catch(err) {
         alert("Error reading from Local Storage\n" + err);
     }
-    if(businessTableString){
-        businessTable = JSON.parse(businessTableString);      // "deserialization" = converting the string into a map
-        keys = Object.keys (businessTable);
+    if(businessesString){
+        businesses = JSON.parse(businessesString);      // "deserialization" = converting the string into a map
+        keys = Object.keys (businesses);
         console.log( keys.length + " businesses loaded");
         for(i = 0; i<keys.length; i++){
             key= keys[i];
-            Business.instance[key] = Business.convertRow2Obj( businessTable[key]);
+            Business.instances[key] = Business.convertRow2Obj( businesses[key]);
         }
     }
 };
 
 //      SAVE ALL BUSINESS INSTANCES
 Business.saveAll = function() {
-    var bookTableString = "", error=false, numOfBusinesses = Object.keys( Business.instances).length;
+    var businessesString = "", error=false, numOfBusinesses = Object.keys( Business.instances).length;
     try {
-        bookTableString = JSON.stringify( Business.instances);      // "serialization" = converting the map into a string
-        localStorage["businessTable"] = businessTableString;
+        businessesString = JSON.stringify( Business.instances);      // "serialization" = converting the map into a string
+        localStorage.setItem["businesses"] = businessesString;
     } catch(err){
         alert("Error writing to local storage\n" + err);
         error = true;
     }
+    if(!error) console.log(numOfBusinesses + " businesses saved")
 };
 
 //      CREATE AND STORE A NEW BUSINESS INSTANCE
@@ -61,7 +64,7 @@ Business.update = function(updatedBusi) {
 //      DELETE A BUSINESS INSTANCE
 Business.destroy = function(id) {
     if(Business.instances[id]){
-        delete Business.instance[id]
+        delete Business.instances[id]
         console.log("Business " + id + " deleted" )
     } else {
         console.log("There is no business with ID " + id + " in the database")
@@ -79,7 +82,7 @@ Business.createTestData = function() {
 //      DELETE ALL DATA FROM LOCAL STORAGE (!!! ONLY USE FOR TESTING !!!)
 Business.clearData = function() {
     if(confirm("Are you sure you want to delete all the businesses in the database?")) {
-        localStorage["businessTable"] = "{}";
+        localStorage["businesses"] = "{}";
     }
 };
 
