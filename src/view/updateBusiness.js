@@ -1,5 +1,5 @@
 stuffandthings.view.updateBusiness = {
-    setUpUserInterface: function(){
+    setupUserInterface: function(){
         var formEl = document.forms['Business'],
             saveButton = formEl.commit,
             selectBusinessEl = formEl.selectBusiness,
@@ -23,7 +23,7 @@ stuffandthings.view.updateBusiness = {
         // when a business is selected, fill the form with it's data
         selectBusinessEl.addEventListener("change", stuffandthings.view.updateBusiness.handleBusinessSelectionEvent);
         // set an event handler for the submit button
-        selectBusinessEl.addEventListener("click", stuffandthings.view.updateBusiness.handleSaveButtonClickEvent);
+        saveButton.addEventListener("click", stuffandthings.view.updateBusiness.handleSaveButtonClickEvent);
         // handle the event when the browser window is closed
         window.addEventListener("beforeunload", Business.saveAll);
     },
