@@ -2,14 +2,11 @@ stuffandthings.view.updateBusiness = {
     setupUserInterface: function(){
         var formEl = document.forms['Business'],
             saveButton = formEl.commit,
-            selectBusinessEl = formEl.selectBusiness,
-            key = "",
-            keys = [],
-            business=null,
-            optionEl=null,
-            i=0;
+            selectBusinessEl = formEl.selectBusiness;
+        var key = "", keys = [], business=null, optionEl=null, i=0;
         // load all the businesses    
         Business.loadAll();
+        console.log("loaded")
         // populate the selection list with businesses
         keys = Object.keys(Business.instances);
         for(i=0; i < keys.length; i++){
