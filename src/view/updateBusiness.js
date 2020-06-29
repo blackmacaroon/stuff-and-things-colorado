@@ -1,3 +1,7 @@
+/****************************
+Methods for updating a record
+****************************/
+
 stuffandthings.view.updateBusiness = {
     setupUserInterface: function(){
         var formEl = document.forms['Business'],

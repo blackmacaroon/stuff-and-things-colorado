@@ -1,3 +1,6 @@
+/****************************
+Methods for creating a record
+****************************/
 stuffandthings.view.createBusiness = {
     setupUserInterface: function () {
       var saveButton = document.forms['Business'].commit;

@@ -1,3 +1,7 @@
+/******************************
+Methods for listing all records
+******************************/
+
 stuffandthings.view.listBusinesses = {
     setupUserInterface: function() {
         var tableBodyEl = document.querySelector("table#businesses>tbody");
