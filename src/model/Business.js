@@ -47,7 +47,7 @@ Business.saveAll = function() {
 
 //      CREATE AND STORE A NEW BUSINESS INSTANCE
 Business.add = function(newBusi) {
-    var business = new Business[newBusi];
+    var business = new Business(newBusi);
     Business.instances[newBusi.id] = business;
     console.log(newBusi.name + " created");
 };
