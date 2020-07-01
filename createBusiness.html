@@ -9,15 +9,43 @@
   <script>
    window.addEventListener("load", stuffandthings.view.createBusiness.setupUserInterface);
   </script>
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
-  <h1>Stuff and Things: Add a new local business</h1>
-  <form id="Business">
-    <p><label>ID: <input name="is" /></label></p>
-    <p><label>name: <input name="name" /></label></p>
-    <p><label>webaddress: <input name="webaddress" /></label></p>
-    <p><button type="button" name="commit">Save</button></p>
-  </form>
-  <nav><a href="index.html">Back</a></nav>
+  <div class="container">
+    <header class="header">
+      <img class="logo" src="" alt="logo">
+      <nav class="dropdown">
+          <div class="nav-content">
+              <ul class="nav-item">
+                  <li><a href="#"></a>Companies Alphabetically?</li>
+                  <li><a href="#"></a>Browse</li>
+              </ul>
+              <ul class="dropdown-content dropdown-hidden">
+                  <li class="dropdown-link"><a href="#"></a>Companies Alphabetically</li>
+                  <li class="dropdown-link"><a href="#"></a>Browse</li>
+              </ul>
+          </div>
+          <div class="hamburger">
+              <button>
+                    <div class="burger"></div>
+                    <div class="burger"></div>
+                    <div class="burger"></div>
+                    <div class="burger"></div>
+                    <div class="burger"></div>
+              </button>
+          </div>
+      </nav>
+      
+    </header>
+    <h1>Stuff and Things: Add a new local business</h1>
+    <form id="Business">
+      <p><label>ID: <input name="is" /></label></p>
+      <p><label>name: <input name="name" /></label></p>
+      <p><label>webaddress: <input name="webaddress" /></label></p>
+      <p><button type="button" name="commit">Save</button></p>
+    </form>
+    <nav><a href="index.html">Back</a></nav>
+  </div>
 </body>
 </html>
